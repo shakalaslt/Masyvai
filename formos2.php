@@ -31,13 +31,47 @@
 
      		Rezultatas: <br/>
      		<?php
+
      		if (isset($_POST['arg1']) && isset($_POST['arg2'])) {
                     //atliekam aritmetini veiksma prioklausomai nuo post {operation}
+
+                    if ($_POST['operation'] == "sum") {
      			
-	     		echo $_POST['arg1'] + $_POST['arg2'];
-	     		} else {
-	     			echo "Nera nurodytas vardas arba pavarde";
-	     		}
+	     		  echo $_POST['arg1'] + $_POST['arg2'];
+	     		 
+                    } else if ($_POST['operation'] == "ded") {
+
+                         echo $_POST['arg1'] - $_POST['arg2']; 
+
+                    } else if  ($_POST['operation'] == "mult") {
+
+                          echo "<br>";
+
+
+                    for ($i=0; $i <= $_POST['arg1']; $i++) {
+                         for ($b=0; $b <=$_POST['arg2']; $b++) { 
+                              echo "#";
+                         }
+                         echo "<br>";
+                    }
+
+                         echo $_POST['arg1'] * $_POST['arg2'];
+                    } else if  ($_POST['operation'] == "div") {
+                         if ( $_POST['arg2'] ==0) {
+                              echo '<div class="alert alert-danger" role="alert">
+                          "dalyba is nulio negalima"</div> ';
+                         }
+                         else {
+
+                         echo $_POST['arg1'] / $_POST['arg2'];
+                    }
+                    }
+
+                   
+
+               } else {
+	     		echo "Nera nurodytas vardas arba pavarde";
+	     	}
 
 
 
@@ -48,6 +82,5 @@
      </div>
 
    
-
 </body>
 </html>
