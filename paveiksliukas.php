@@ -4,7 +4,7 @@
 <head>
 	<title></title>
 	<style>
-	.body {
+	body {
 	background-color: orange
 }
 
@@ -21,6 +21,9 @@
 		.B {
 			background-color: white;
 		}
+		.br {
+			clear: both;
+		}
 	</style>
 </head>
 <body>
@@ -33,6 +36,8 @@
 <?php
 
 $img=["J","B","B","B","B","J","B","B","B","B","J","B","J","B","B","J",];
+
+$plotis = 4;
 
 foreach ($img as $pixel) {
 	echo '<div class="pix"></div>';
